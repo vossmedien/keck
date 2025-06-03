@@ -23,8 +23,8 @@
         "address_line2": "12345 Musterstadt",
         "opening_hours": "Mo - Fr: 8:00 - 18:00 Uhr",
         "opening_hours_weekend": "Sa: 9:00 - 16:00 Uhr",
-        "facebook_url": "",
-        "instagram_url": "",
+        "facebook_url": "https://www.facebook.com",
+        "instagram_url": "https://www.facebook.com",
         "plane_url": "/pages/kontakt"
       }
     }
