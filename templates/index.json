@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "keck_homepage_hero": {
@@ -5,9 +14,11 @@
       "settings": {
         "baumaschinen_title": "BAUMASCHINEN",
         "baumaschinen_description": "Entdecken Sie unsere große Auswahl an hochwertigen Baumaschinen für alle Ihre Bauprojekte. Von Baggern bis hin zu Radladern - wir haben die richtige Maschine für Sie.",
+        "baumaschinen_image": "shopify://shop_images/intro-baumaschinen.jpg",
         "baumaschinen_button_text": "Zu den Baumaschinen",
         "anhaenger_title": "ANHÄNGER",
         "anhaenger_description": "Robuste und zuverlässige Anhänger für Transport und Logistik. Unsere Anhänger sind perfekt für gewerbliche und private Nutzung geeignet.",
+        "anhaenger_image": "shopify://shop_images/intro-anhaenger.jpg",
         "anhaenger_button_text": "Zu den Anhängern"
       }
     }
