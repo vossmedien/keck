@@ -1,0 +1,398 @@
+<style>
+    .keck-homepage-hero {
+        padding: 0;
+        display: flex;
+        align-items: stretch;
+    }
+
+    .keck-homepage-hero__container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .keck-homepage-hero__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .keck-homepage-hero__card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 0;
+        transition: transform 0.3s ease;
+    }
+
+
+    .keck-homepage-hero__card--baumaschinen {
+        background-color: var(--keck-primary);
+        color: white;
+    }
+
+    .keck-homepage-hero__card--anhaenger {
+        background-color: var(--keck-secondary);
+        color: var(--keck-primary);
+    }
+
+    .keck-homepage-hero__title {
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 3rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: center;
+
+        @media screen and (min-width: 1100px) {
+            font-size: 60px;
+        }
+    }
+
+
+    .baumaschinen--button, .anhaenger--button {
+        position: absolute;
+        bottom: 4rem;
+    }
+
+    .baumaschinen--button {
+        right: 5vw;
+    }
+
+    .anhaenger--button {
+        left: 5vw;
+    }
+
+
+    .keck-homepage-hero__image-container {
+        position: relative;
+        margin-bottom: 3rem;
+        overflow: hidden;
+    }
+
+    .keck-homepage-hero__image {
+        width: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .keck-homepage-hero__button {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.2rem 2.5rem;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        z-index: 10;
+    }
+
+    .keck-homepage-hero__button--baumaschinen {
+        background-color: var(--keck-secondary);
+        color: var(--keck-primary);
+        border: 3px solid var(--keck-secondary);
+    }
+
+    .keck-homepage-hero__button--baumaschinen:hover {
+        background-color: white;
+        color: var(--keck-secondary);
+        border-color: var(--keck-secondary);
+    }
+
+    .keck-homepage-hero__button--anhaenger {
+        background-color: var(--keck-primary);
+        color: white;
+        border: 3px solid var(--keck-primary);
+    }
+
+    .keck-homepage-hero__button--anhaenger:hover {
+        background-color: white;
+        color: var(--keck-primary);
+        border-color: var(--keck-primary);
+    }
+
+    .keck-homepage-hero__button-icon {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .keck-homepage-hero__button:hover .keck-homepage-hero__button-icon {
+        transform: translateX(5px);
+    }
+
+    .keck-homepage-hero__description {
+        font-size: 1.6rem;
+        line-height: 1.8;
+        flex-grow: 1;
+    }
+
+
+    .keck-homepage-hero__title--anhaenger {
+        text-align: center;
+        color: var(--keck-primary);
+
+        @media screen and (min-width: 768px) {
+            padding-left: 5vw;
+            text-align: left;
+        }
+    }
+
+    .keck-homepage-hero__title--baumaschinen {
+        text-align: center;
+        color: var(--keck-white);
+
+
+        @media screen and (min-width: 768px) {
+            padding-right: 5vw;
+            text-align: right;
+        }
+    }
+
+
+    .keck-homepage-hero__description--baumaschinen {
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+
+        @media screen and (min-width: 768px) {
+            padding-right: 5vw;
+            text-align: right;
+        }
+    }
+
+    .keck-homepage-hero__description--anhaenger {
+        text-align: center;
+        max-width: 600px;
+        margin-right: auto;
+
+        @media screen and (min-width: 768px) {
+            padding-left: 5vw;
+            text-align: left;
+        }
+    }
+
+    /* Mobile Styles */
+    @media screen and (max-width: 768px) {
+        .keck-homepage-hero {
+            min-height: 0vh;
+        }
+
+      .keck-header-main__logo svg{
+        max-height: 35px;
+        width: auto;
+      }
+
+
+        .keck-homepage-hero__grid {
+            grid-template-columns: 1fr;
+            min-height: 0vh;
+        }
+
+        .keck-homepage-hero__card {
+            padding: 3rem 2rem;
+            min-height: 0vh;
+        }
+
+        .keck-homepage-hero__title {
+            text-align: center !important;
+            margin-bottom: 2rem;
+            margin-top: 0;
+        }
+
+        .keck-homepage-hero__image {
+            height: 250px;
+        }
+
+        .keck-homepage-hero__image-container {
+            margin-bottom: 0;
+        }
+
+        .keck-homepage-hero__description {
+            font-size: 1.4rem;
+            text-align: center !important;
+        }
+
+        .keck-homepage-hero__button {
+            padding: 1rem 2rem;
+            font-size: 1.3rem;
+            bottom: 1.5rem;
+        }
+    }
+</style>
+
+<section class="keck-homepage-hero">
+    <div class="keck-homepage-hero__container">
+        <div class="keck-homepage-hero__grid">
+
+            <!-- Baumaschinen Card -->
+            <div class="keck-homepage-hero__card keck-homepage-hero__card--baumaschinen">
+
+                <!-- Headline -->
+                <h2 class="keck-homepage-hero__title keck-homepage-hero__title--baumaschinen">
+                    {{ section.settings.baumaschinen_title | default: 'BAUMASCHINEN' }}
+                </h2>
+
+                <!-- Image with Button -->
+                <div class="keck-homepage-hero__image-container">
+                    {%- if section.settings.baumaschinen_image != blank -%}
+                        <img
+                                src="{{ section.settings.baumaschinen_image | image_url: width: 800 }}"
+                                alt="Baumaschinen"
+                                class="keck-homepage-hero__image"
+                                loading="lazy"
+                        >
+                    {%- else -%}
+                        <img
+                                src="https://via.placeholder.com/800x300/cccccc/666666?text=Baumaschinen"
+                                alt="Baumaschinen Placeholder"
+                                class="keck-homepage-hero__image"
+                        >
+                    {%- endif -%}
+
+                    <!-- Button on Image -->
+                    <div class="baumaschinen--button">
+                        <a
+                                href="/collections/baumaschinen"
+                                class="keck-homepage-hero__button keck-homepage-hero__button--baumaschinen"
+                        >
+
+                            <span>{{ section.settings.baumaschinen_button_text | default: 'Zu den Baumaschinen' }}</span>
+                            <svg class="keck-homepage-hero__button-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Description below image -->
+                <p class="keck-homepage-hero__description keck-homepage-hero__description--baumaschinen">
+                    {{ section.settings.baumaschinen_description | default: 'Entdecken Sie unsere große Auswahl an hochwertigen Baumaschinen für alle Ihre Bauprojekte. Von Baggern bis hin zu Radladern - wir haben die richtige Maschine für Sie.' }}
+                </p>
+
+            </div>
+
+            <!-- Anhänger Card -->
+            <div class="keck-homepage-hero__card keck-homepage-hero__card--anhaenger">
+
+                <!-- Headline -->
+                <h2 class="keck-homepage-hero__title keck-homepage-hero__title--anhaenger">
+                    {{ section.settings.anhaenger_title | default: 'ANHÄNGER' }}
+                </h2>
+
+                <!-- Image with Button -->
+                <div class="keck-homepage-hero__image-container">
+                    {%- if section.settings.anhaenger_image != blank -%}
+                        <img
+                                src="{{ section.settings.anhaenger_image | image_url: width: 800 }}"
+                                alt="Anhänger"
+                                class="keck-homepage-hero__image"
+                                loading="lazy"
+                        >
+                    {%- else -%}
+                        <img
+                                src="https://via.placeholder.com/800x300/cccccc/666666?text=Anhänger"
+                                alt="Anhänger Placeholder"
+                                class="keck-homepage-hero__image"
+                        >
+                    {%- endif -%}
+
+                    <!-- Button on Image -->
+                    <div class="anhaenger--button">
+                        <a
+                                href="/collections/anhaenger"
+                                class="keck-homepage-hero__button keck-homepage-hero__button--anhaenger"
+                        >
+
+                            <span>{{ section.settings.anhaenger_button_text | default: 'Zu den Anhängern' }}</span>
+                            <svg class="keck-homepage-hero__button-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Description below image -->
+                <p class="keck-homepage-hero__description keck-homepage-hero__description--anhaenger">
+                    {{ section.settings.anhaenger_description | default: 'Robuste und zuverlässige Anhänger für Transport und Logistik. Unsere Anhänger sind perfekt für gewerbliche und private Nutzung geeignet.' }}
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Keck Homepage Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Baumaschinen Section"
+    },
+    {
+      "type": "text",
+      "id": "baumaschinen_title",
+      "label": "Baumaschinen Titel",
+      "default": "BAUMASCHINEN"
+    },
+    {
+      "type": "textarea",
+      "id": "baumaschinen_description",
+      "label": "Baumaschinen Beschreibung",
+      "default": "Entdecken Sie unsere große Auswahl an hochwertigen Baumaschinen für alle Ihre Bauprojekte. Von Baggern bis hin zu Radladern - wir haben die richtige Maschine für Sie."
+    },
+    {
+      "type": "image_picker",
+      "id": "baumaschinen_image",
+      "label": "Baumaschinen Hintergrundbild"
+    },
+    {
+      "type": "text",
+      "id": "baumaschinen_button_text",
+      "label": "Baumaschinen Button Text",
+      "default": "Zu den Baumaschinen"
+    },
+    {
+      "type": "header",
+      "content": "Anhänger Section"
+    },
+    {
+      "type": "text",
+      "id": "anhaenger_title",
+      "label": "Anhänger Titel",
+      "default": "ANHÄNGER"
+    },
+    {
+      "type": "textarea",
+      "id": "anhaenger_description",
+      "label": "Anhänger Beschreibung",
+      "default": "Robuste und zuverlässige Anhänger für Transport und Logistik. Unsere Anhänger sind perfekt für gewerbliche und private Nutzung geeignet."
+    },
+    {
+      "type": "image_picker",
+      "id": "anhaenger_image",
+      "label": "Anhänger Hintergrundbild"
+    },
+    {
+      "type": "text",
+      "id": "anhaenger_button_text",
+      "label": "Anhänger Button Text",
+      "default": "Zu den Anhängern"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Keck Homepage Hero"
+    }
+  ]
+}
+{% endschema %}

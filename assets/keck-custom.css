@@ -1,0 +1,91 @@
+/* KECK Global Styles */
+
+:root {
+  --keck-primary: #022842;
+  --keck-primary-light: #0061A1;
+  --keck-secondary: #F7BF06;
+  --keck-white: #ffffff;
+  --keck-gray-light: #f8f9fa;
+  --keck-gray: #6b7280;
+  --keck-gray-dark: #374151;
+  --keck-black: #000;
+  --keck-border-color: #C4C4C4;
+  --keck-body-color: var(--keck-black);
+  --keck-body-color-inverse: var(--keck-white);
+}
+
+
+/* Hide default header and footer on pages where we use custom sections */
+.template-index .header-wrapper,
+.template-index .section-footer {
+  display: none;
+}
+
+/* Buttons Global */
+.btn-keck {
+  background-color: var(--keck-primary);
+  color: var(--keck-white);
+  border: 2px solid var(--keck-primary);
+  padding: 1.2rem 2.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.btn-keck:hover {
+  background-color: var(--keck-secondary);
+  color: var(--keck-primary);
+  border-color: var(--keck-secondary);
+}
+
+.btn-keck--secondary {
+  background-color: var(--keck-secondary);
+  color: var(--keck-primary);
+  border-color: var(--keck-secondary);
+}
+
+.btn-keck--secondary:hover {
+  background-color: var(--keck-primary);
+  color: var(--keck-white);
+  border-color: var(--keck-primary);
+}
+
+/* Text Colors */
+.text-primary {
+  color: var(--keck-primary);
+}
+
+.text-secondary {
+  color: var(--keck-secondary);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, input, .btn {
+  transition: all 0.3s ease;
+}
+
+/* Focus states for accessibility */
+a:focus,
+button:focus,
+input:focus,
+[tabindex]:focus {
+  outline: 2px solid var(--keck-secondary);
+  outline-offset: 2px;
+} 

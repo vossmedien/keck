@@ -1,3 +1,42 @@
+
+/* barlow-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/barlow-v12-latin-regular.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('/assets/barlow-v12-latin-regular.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* barlow-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/barlow-v12-latin-500.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('/assets/barlow-v12-latin-500.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* barlow-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/assets/barlow-v12-latin-600.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('/assets/barlow-v12-latin-600.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+/* barlow-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/barlow-v12-latin-700.woff2') format('woff2'), /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+       url('/assets/barlow-v12-latin-700.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5+, IE 9+, Safari 3.1+, iOS 4.2+, Android Browser 2.2+ */
+}
+
+
 :root {
   --alpha-button-background: 1;
   --alpha-button-border: 1;
@@ -98,6 +137,10 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 .utility-bar__grid.page-width {
   padding-left: 3rem;
   padding-right: 3rem;
+}
+
+.align-self-end{
+  align-self: flex-end;
 }
 
 @media screen and (min-width: 750px) {
