@@ -78,7 +78,7 @@
         align-items: center;
         gap: 0.8rem;
         transition: color 0.3s ease;
-        padding-inline:1rem;
+        padding-inline: 1rem;
         border-left: 1px solid var(--keck-border-color);
         border-right: 1px solid var(--keck-border-color);
         margin-left: 2rem;
@@ -86,10 +86,10 @@
         height: 90px;
         line-height: 90px;
 
-            @media screen and (min-width: 992px) {
-                font-size: 28px;
-                padding-inline: 2.5rem;
-            }
+        @media screen and (min-width: 992px) {
+            font-size: 28px;
+            padding-inline: 2.5rem;
+        }
     }
 
 
@@ -108,20 +108,15 @@
         padding-inline: 1rem;
         justify-content: center;
 
-          @media screen and (min-width: 992px) {
-                   padding-inline: 2.5rem;
-          }
+        @media screen and (min-width: 992px) {
+            padding-inline: 2.5rem;
+        }
     }
 
-    #cart-icon-bubble{
+    #cart-icon-bubble {
         background-color: var(--keck-primary-light);
     }
 
-
-    .keck-header-main__phone svg {
-        width: 18px;
-        height: 18px;
-    }
 
     /* Navigation - versteckt auf Startseite */
     .keck-header-navigation {
@@ -251,7 +246,12 @@
 
                 <!-- Phone Number -->
                 <a href="tel:+4907853464" class="keck-header-main__phone">
-                    <img src="/assets/icon-phone.svg">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.5 6H13.5L16.5 13.5L12.75 15.75C14.3564 19.0073 16.9927 21.6436 20.25 23.25L22.5 19.5L30 22.5V28.5C30 29.2956 29.6839 30.0587 29.1213 30.6213C28.5587 31.1839 27.7956 31.5 27 31.5C21.1489 31.1444 15.6302 28.6597 11.4852 24.5148C7.34026 20.3698 4.85557 14.8511 4.5 9C4.5 8.20435 4.81607 7.44129 5.37868 6.87868C5.94129 6.31607 6.70435 6 7.5 6Z" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22.5 10.5C23.2956 10.5 24.0587 10.8161 24.6213 11.3787C25.1839 11.9413 25.5 12.7044 25.5 13.5" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22.5 4.5C24.8869 4.5 27.1761 5.44821 28.864 7.13604C30.5518 8.82387 31.5 11.1131 31.5 13.5" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
                     <span>+49 (0) 7853 464</span>
                 </a>
 
@@ -272,12 +272,22 @@
 
                 <!-- Search Icon -->
                 <a href="{{ routes.search_url }}" class="keck-header-menu-entry" aria-label="Suche">
-                    <img src="/assets/icon-search.svg">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.5 15C4.5 16.3789 4.77159 17.7443 5.29927 19.0182C5.82694 20.2921 6.60036 21.4496 7.57538 22.4246C8.55039 23.3996 9.70791 24.1731 10.9818 24.7007C12.2557 25.2284 13.6211 25.5 15 25.5C16.3789 25.5 17.7443 25.2284 19.0182 24.7007C20.2921 24.1731 21.4496 23.3996 22.4246 22.4246C23.3996 21.4496 24.1731 20.2921 24.7007 19.0182C25.2284 17.7443 25.5 16.3789 25.5 15C25.5 13.6211 25.2284 12.2557 24.7007 10.9818C24.1731 9.70791 23.3996 8.55039 22.4246 7.57538C21.4496 6.60036 20.2921 5.82694 19.0182 5.29926C17.7443 4.77159 16.3789 4.5 15 4.5C13.6211 4.5 12.2557 4.77159 10.9818 5.29926C9.70791 5.82694 8.55039 6.60036 7.57538 7.57538C6.60036 8.55039 5.82694 9.70791 5.29927 10.9818C4.77159 12.2557 4.5 13.6211 4.5 15Z" stroke="black" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M31.5 31.5L22.5 22.5" stroke="black" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
                 </a>
 
                 <!-- Cart Icon -->
                 <a href="{{ routes.cart_url }}" class="keck-header-menu-entry" id="cart-icon-bubble" aria-label="Warenkorb">
-                    <img src="/assets/icon-cart.svg">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 28.5C6 29.2956 6.31607 30.0587 6.87868 30.6213C7.44129 31.1839 8.20435 31.5 9 31.5C9.79565 31.5 10.5587 31.1839 11.1213 30.6213C11.6839 30.0587 12 29.2956 12 28.5C12 27.7044 11.6839 26.9413 11.1213 26.3787C10.5587 25.8161 9.79565 25.5 9 25.5C8.20435 25.5 7.44129 25.8161 6.87868 26.3787C6.31607 26.9413 6 27.7044 6 28.5Z" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22.5 28.5C22.5 29.2956 22.8161 30.0587 23.3787 30.6213C23.9413 31.1839 24.7044 31.5 25.5 31.5C26.2956 31.5 27.0587 31.1839 27.6213 30.6213C28.1839 30.0587 28.5 29.2956 28.5 28.5C28.5 27.7044 28.1839 26.9413 27.6213 26.3787C27.0587 25.8161 26.2956 25.5 25.5 25.5C24.7044 25.5 23.9413 25.8161 23.3787 26.3787C22.8161 26.9413 22.5 27.7044 22.5 28.5Z" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M25.5 25.5H9V4.5H6" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 7.5L30 9L28.5 19.5H9" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+
                     {%- if cart != empty -%}
                         <span class="keck-cart-count">{{ cart.item_count }}</span>
                     {%- endif -%}
