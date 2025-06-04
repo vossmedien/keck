@@ -1,25 +1,69 @@
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
+    "collection-hero": {
+      "type": "collection-hero",
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "scheme-1"
+        "headline": "",
+        "topline": ""
       }
     },
-    "product-grid": {
+    "breadcrumbs": {
+      "type": "breadcrumb",
+      "settings": {
+      }
+    },
+    "collection-title": {
+      "type": "collection-title",
+      "settings": {
+      }
+    },
+    "category-entries": {
+      "type": "category-entries",
+      "blocks": {
+        "category_1": {
+          "type": "category_item",
+          "settings": {
+            "category_title": "Baggertyp 1",
+            "category_url": ""
+          }
+        },
+        "category_2": {
+          "type": "category_item",
+          "settings": {
+            "category_title": "Baggertyp 2", 
+            "category_url": ""
+          }
+        },
+        "category_3": {
+          "type": "category_item",
+          "settings": {
+            "category_title": "Baggertyp 3",
+            "category_url": ""
+          }
+        },
+        "category_4": {
+          "type": "category_item",
+          "settings": {
+            "category_title": "Baggertyp 4",
+            "category_url": ""
+          }
+        }
+      },
+      "block_order": ["category_1", "category_2", "category_3", "category_4"],
+      "settings": {
+        "show_subcategories": true
+      }
+    },
+    "main": {
       "type": "main-collection-product-grid",
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
         "enable_filtering": true,
         "filter_type": "horizontal",
         "enable_sorting": true,
@@ -27,10 +71,78 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "question-teaser": {
+      "type": "question-teaser",
+      "settings": {
+        "question_title": "Sie haben Fragen zu unseren Produkten?",
+        "button_text": "Kontakt",
+        "contact_url": ""
+      }
+    },
+    "category-contents": {
+      "type": "category-contents",
+      "blocks": {
+        "content_1": {
+          "type": "content_item",
+          "settings": {
+            "headline": "Anbaugeräte",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+            "button_text": "Anbaugeräte",
+            "button_url": ""
+          }
+        },
+        "content_2": {
+          "type": "content_item",
+          "settings": {
+            "headline": "Ankauf von Maschinen",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+            "button_text": "Jetzt Kalkül",
+            "button_url": ""
+          }
+        }
+      },
+      "block_order": ["content_1", "content_2"],
+      "settings": {
+        "section_topline": "Finden Sie hier die wichtigsten Bereiche für Ihre Maschinen",
+        "section_title": "Weitere Leistungen"
+      }
+    },
+    "keck_newsletter": {
+      "type": "keck-newsletter",
+      "settings": {
+        "newsletter_title": "Newsletter abonnieren",
+        "newsletter_description": "Erhalten Sie regelmäßig Informationen zu unseren Angeboten"
+      }
+    },
+    "collection-cross-sell": {
+      "type": "collection-cross-sell",
+      "settings": {
+        "variant": "auto",
+        "text": "",
+        "target_url": ""
+      }
+    },
+    "social-sticky": {
+      "type": "keck-social-sticky",
+      "settings": {
+        "facebook_url": "https://facebook.com/keck",
+        "instagram_url": "https://instagram.com/keck",
+        "linkedin_url": "https://linkedin.com/company/keck",
+        "whatsapp_number": "+49 123 456789"
+      }
     }
   },
   "order": [
-    "banner",
-    "product-grid"
+    "collection-hero",
+    "breadcrumbs",
+    "collection-title",
+    "category-entries",
+    "main",
+    "question-teaser",
+    "category-contents",
+    "keck_newsletter",
+    "collection-cross-sell",
+    "social-sticky"
   ]
 }

@@ -1,0 +1,1860 @@
+// ========================================
+// KECK BAUMASCHINEN - MAIN STYLES (SCSS)
+// ========================================
+
+// ========================================
+// 1. GLOBAL VARIABLES
+// ========================================
+
+:root {
+  --keck-primary: #022842;
+  --keck-primary-light: #0061A1;
+  --keck-secondary: #F7BF06;
+  --keck-white: #ffffff;
+  --keck-gray-light: #f8f9fa;
+  --keck-gray: #6b7280;
+  --keck-gray-dark: #374151;
+  --keck-black: #000;
+  --keck-border-color: #C4C4C4;
+  --keck-body-color: var(--keck-black);
+  --keck-body-color-inverse: var(--keck-white);
+}
+
+// ========================================
+// 2. CATEGORY COLOR SCHEMES
+// ========================================
+
+// Baumaschinen: Blue Background, White Text
+body[data-collection-handle="baumaschinen"] {
+  --color-background: 2, 40, 66 !important;
+  --color-foreground: 255, 255, 255 !important;
+  --keck-category-bg: var(--keck-primary);
+  --keck-category-text: var(--keck-white);
+  --keck-category-accent: var(--keck-secondary);
+  --keck-social-bg: var(--keck-secondary);
+  --keck-social-icon: var(--keck-primary);
+  --keck-body-color: var(--keck-white);
+  background-color: rgb(var(--color-background)) !important;
+}
+
+// Anhänger: Yellow Background, Blue Text
+body[data-collection-handle="anhaenger"] {
+  --color-background: 247, 191, 6 !important;
+  --color-foreground: 2, 40, 66 !important;
+  --keck-category-bg: var(--keck-secondary);
+  --keck-category-text: var(--keck-primary);
+  --keck-category-accent: var(--keck-primary);
+  --keck-social-bg: var(--keck-primary-light);
+  --keck-social-icon: var(--keck-secondary);
+  --keck-body-color: var(--keck-primary);
+  background-color: rgb(var(--color-background)) !important;
+}
+
+// Newsletter should always have light gray background
+body[data-collection-handle] .keck-newsletter {
+  background-color: #f6f6f6 !important;
+  color: var(--keck-black) !important;
+}
+
+// Content sections should match category colors
+body[data-collection-handle="baumaschinen"] .section:not(.keck-collection-hero):not(.keck-social-sticky):not(.keck-newsletter),
+body[data-collection-handle="baumaschinen"] .main-collection-product-grid,
+body[data-collection-handle="baumaschinen"] .keck-header-topbar {
+  background-color: rgb(var(--color-background)) !important;
+}
+
+body[data-collection-handle="anhaenger"] .section:not(.keck-collection-hero):not(.keck-social-sticky):not(.keck-newsletter),
+body[data-collection-handle="anhaenger"] .main-collection-product-grid,
+body[data-collection-handle="anhaenger"] .keck-header-topbar {
+  background-color: rgb(var(--color-background)) !important;
+}
+
+// Header-Topbar text and icons should always be blue
+body[data-collection-handle] .keck-header-topbar,
+body[data-collection-handle] .keck-header-topbar a,
+body[data-collection-handle] .keck-header-topbar span,
+body[data-collection-handle] .keck-header-topbar div,
+body[data-collection-handle] .keck-header-topbar p {
+  color: var(--keck-primary) !important;
+}
+
+body[data-collection-handle] .keck-header-topbar svg path {
+  stroke: var(--keck-primary) !important;
+}
+
+body[data-collection-handle] .keck-social-sticky svg path {
+  stroke: var(--keck-social-icon) !important;
+}
+
+// ========================================
+// 3. HEADER STYLES
+// ========================================
+
+.keck-header {
+  // Header Topbar
+  &-topbar {
+    background-color: var(--keck-primary);
+    color: white;
+    padding: 0.8rem 0;
+    font-size: 1.3rem;
+
+    &__content {
+      max-width: 1800px;
+      margin: 0 auto;
+      padding-inline: 15px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    &__login {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 0;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+    }
+  }
+
+  // Main Header
+  &-main {
+    background-color: white;
+    border-bottom: 1px solid #e5e5e5;
+
+    &__content {
+      max-width: 1800px;
+      margin: 0 auto;
+      padding-inline: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 90px;
+    }
+
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    &__logo {
+      a {
+        text-decoration: none;
+        display: block;
+        line-height: 0;
+      }
+
+      img {
+        max-height: 60px;
+        width: auto;
+      }
+    }
+
+    &__phone {
+      color: var(--keck-black);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: color 0.3s ease;
+      padding-inline: 1rem;
+      border-left: 1px solid var(--keck-border-color);
+      border-right: 1px solid var(--keck-border-color);
+      margin-left: 2rem;
+      white-space: nowrap;
+      height: 90px;
+      line-height: 90px;
+
+      &:hover {
+        color: var(--keck-secondary);
+      }
+
+      @media screen and (min-width: 992px) {
+        font-size: 28px;
+        padding-inline: 2.5rem;
+      }
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  // Navigation
+  &-navigation {
+    display: none;
+
+    &.show {
+      display: flex;
+      gap: 2rem;
+    }
+
+    a {
+      color: var(--keck-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.4rem;
+      padding: 0.8rem 1.2rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+
+      &:hover {
+        background-color: #f8f9fa;
+        color: var(--keck-secondary);
+      }
+    }
+  }
+
+  &-menu-entry {
+    border-left: 1px solid var(--keck-border-color);
+    display: flex;
+    align-items: center;
+    height: 91px;
+    line-height: 91px;
+    text-align: center;
+    padding-inline: 1rem;
+    justify-content: center;
+
+    @media screen and (min-width: 992px) {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  &-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+#cart-icon-bubble {
+  background-color: var(--keck-primary-light);
+}
+
+// Cart Count
+.keck-cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--keck-secondary);
+  color: var(--keck-primary);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  min-width: 20px;
+}
+
+// ========================================
+// 4. FOOTER STYLES
+// ========================================
+
+.keck-footer {
+  background-color: var(--keck-primary);
+  color: white;
+  padding: 4rem 0 2rem 0;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 15px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+  }
+
+  &__column {
+    &.is-first {
+      padding-left: 5vw;
+    }
+
+    &.is-last {
+      padding-left: 5vw;
+    }
+
+    h3 {
+      color: var(--keck-white);
+      font-size: 28px;
+      padding-bottom: .5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--keck-secondary);
+      margin-top: 0;
+      display: inline-block;
+    }
+  }
+
+  &__nav {
+    &-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &-item {
+      margin-bottom: 1rem;
+
+      &:last-child .keck-footer__nav-link {
+        border-bottom: 0;
+      }
+    }
+
+    &-link {
+      color: var(--keck-white);
+      font-size: 28px;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--keck-secondary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--keck-secondary);
+      }
+    }
+  }
+
+  &__logo {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    img {
+      max-height: 80px;
+      width: auto;
+    }
+  }
+
+  &__legal {
+    &-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    &-link {
+      color: var(--keck-white);
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--keck-secondary);
+      }
+    }
+  }
+
+  &__contact {
+    &-item {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      line-height: 1.2;
+      gap: 1rem;
+      padding-block: .5rem 1.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .25);
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    &-icon {
+      color: var(--keck-secondary);
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    &-link {
+      color: var(--keck-white);
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--keck-secondary);
+      }
+    }
+
+    &-info {
+      color: var(--keck-white);
+      font-size: 1.4rem;
+      line-height: 1.6;
+    }
+  }
+
+  &_social-media svg {
+    height: 36px;
+    width: auto;
+  }
+}
+
+.label {
+  color: var(--keck-secondary);
+  display: block;
+}
+
+// ========================================
+// 5. HOMEPAGE HERO STYLES
+// ========================================
+
+#MainContent {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.shopify-section:has(.keck-homepage-hero) {
+  flex: 1;
+  align-self: stretch;
+}
+
+.shopify-section:has(.keck-newsletter) {
+  margin-top: auto;
+}
+
+.keck-homepage-hero {
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+  min-height: 100%;
+
+  &__container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 100%;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 0;
+    transition: transform 0.3s ease;
+
+    &--baumaschinen {
+      background-color: var(--keck-primary);
+      color: white;
+    }
+
+    &--anhaenger {
+      background-color: var(--keck-secondary);
+      color: var(--keck-primary);
+    }
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+
+    &--anhaenger {
+      text-align: center;
+      color: var(--keck-primary);
+    }
+
+    &--baumaschinen {
+      text-align: center;
+      color: var(--keck-white);
+    }
+
+    @media screen and (min-width: 1100px) {
+      font-size: 60px;
+    }
+
+    @media screen and (min-width: 768px) {
+      &--anhaenger {
+        padding-left: 5vw;
+        text-align: left;
+      }
+
+      &--baumaschinen {
+        padding-right: 5vw;
+        text-align: right;
+      }
+    }
+  }
+
+  &__image {
+    &-container {
+      position: relative;
+      margin-bottom: 3rem;
+      overflow: hidden;
+    }
+
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__button {
+    @extend .btn;
+    @extend .btn-lg;
+    z-index: 10;
+  }
+
+  &__description {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    flex-grow: 1;
+
+    &--baumaschinen {
+      text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+    }
+
+    &--anhaenger {
+      text-align: center;
+      max-width: 600px;
+      margin-right: auto;
+    }
+
+    @media screen and (min-width: 768px) {
+      &--baumaschinen {
+        padding-right: 5vw;
+        text-align: right;
+      }
+
+      &--anhaenger {
+        padding-left: 5vw;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.baumaschinen--button, .anhaenger--button {
+  position: absolute;
+  bottom: 4rem;
+}
+
+.baumaschinen--button {
+  right: 5vw;
+}
+
+.anhaenger--button {
+  left: 5vw;
+}
+
+// ========================================
+// 6. COLLECTION PAGES STYLES
+// ========================================
+
+// Collection Hero
+.collection-hero {
+  position: relative;
+  min-height: 600px;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.6));
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+    z-index: 2;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 3;
+    background: rgba(255, 255, 255, 0.6);
+    border: 5px solid var(--keck-secondary);
+    border-radius: 12px;
+    padding: 4rem 3rem;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  &__headline {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: var(--keck-primary);
+    margin-block: 0;
+    letter-spacing: 1px;
+  }
+
+  &__topline {
+    color: var(--keck-primary);
+    margin-bottom: 1rem;
+  }
+}
+
+// Collection Title
+.keck-collection-title {
+  text-align: center;
+  padding: 3rem 0 2rem 0;
+  background-color: transparent;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 15px;
+  }
+
+  &__label {
+    font-size: 1.6rem;
+    color: var(--keck-body-color);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  &__name {
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--keck-body-color);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+
+    // Kategorie-spezifische Linien
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 420px;
+      height: 4px;
+    }
+  }
+}
+
+// Category-specific lines for collection title
+body[data-collection-handle="baumaschinen"] .keck-collection-title__name::after {
+  background-color: var(--keck-secondary);
+}
+
+body[data-collection-handle="anhaenger"] .keck-collection-title__name::after {
+  background-color: var(--keck-primary);
+}
+
+// Collection Cross-Sell
+.collection-cross-sell {
+  padding: 0;
+  margin: 0;
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+
+    &:hover .collection-cross-sell__arrow svg {
+      transform: translateX(10px);
+    }
+  }
+
+  // Cross-Sell Colors: Dynamic based on current page
+  // When on Baumaschinen pages (linking to Anhänger): YELLOW background
+  body[data-collection-handle="baumaschinen"] &--anhaenger {
+    background: var(--keck-secondary);
+    color: var(--keck-primary);
+  }
+
+  // When on Anhänger pages (linking to Baumaschinen): BLUE background
+  body[data-collection-handle="anhaenger"] &--baumaschinen {
+    background: var(--keck-secondary);
+    color: var(--keck-primary);
+  }
+
+  &__content {
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    gap: 2rem;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-block: 2rem;
+
+    img {
+      max-height: 150px;
+    }
+
+    svg {
+
+    }
+  }
+
+  &__text {
+    font-size: 2.4rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+
+    svg {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease;
+    }
+  }
+}
+
+// ========================================
+// 6.1 CATEGORY ENTRIES (Kategoriekacheln)
+// ========================================
+
+.category-entries {
+  padding: 4rem 0;
+
+  &__container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding-inline: 1rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    min-height: 500px;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    // Weiß-transparentes Gradient für bessere Lesbarkeit
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        transparent 40%, 
+        rgba(255, 255, 255, 0.1) 60%, 
+        rgba(255, 255, 255, 0.3) 80%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.6));
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem;
+  }
+
+  &__title {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    position: relative;
+    z-index: 5;
+    
+    // Links (ungerade): unten rechts
+    .category-entries__item:nth-child(odd) & {
+      margin-left: auto;
+      text-align: right;
+    }
+    
+    // Rechts (gerade): unten links  
+    .category-entries__item:nth-child(even) & {
+      margin-right: auto;
+      text-align: left;
+    }
+  }
+
+  // Hide product list when category entries are shown
+  ~ .main-collection-product-grid {
+    display: none;
+  }
+}
+
+// Category-specific text colors for category entries
+body[data-collection-handle="baumaschinen"] .category-entries__title {
+  color: var(--keck-primary);
+}
+
+body[data-collection-handle="anhaenger"] .category-entries__title {
+  color: var(--keck-secondary);
+}
+
+// ========================================
+// 6.2 QUESTION TEASER
+// ========================================
+
+.question-teaser {
+  padding: 0;
+  margin: 4rem 0;
+
+  &__container {
+    max-width: 800px;
+    margin-inline: auto;
+    padding-inline: 15px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      gap: 3rem;
+      padding: 5rem 0;
+      text-align: left;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 106px;
+      height: 106px;
+
+      svg {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  }
+
+  &__text {
+    flex: 1;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+
+    @media screen and (min-width: 768px) {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__button {
+    flex-shrink: 0;
+  }
+}
+
+// Category-specific colors for question teaser
+body[data-collection-handle="baumaschinen"] .question-teaser {
+  background-color: var(--keck-secondary);
+  color: var(--keck-primary-light);
+
+  &__icon svg {
+    color: var(--keck-primary-light);
+  }
+
+   &__title{
+    color: var(--keck-primary-light);
+  }
+
+  .btn {
+    @extend .btn-primary-light;
+  }
+}
+
+body[data-collection-handle="anhaenger"] .question-teaser {
+  background-color: var(--keck-primary-light);
+  color: var(--keck-secondary);
+
+  &__icon svg {
+    color: var(--keck-secondary);
+  }
+
+  &__title{
+    color: var(--keck-secondary);
+  }
+
+  .btn {
+    @extend .btn-secondary;
+  }
+}
+
+// ========================================
+// 6.3 CATEGORY CONTENTS (Weitere Leistungen)
+// ========================================
+
+.category-contents {
+  padding: 6rem 0;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 15px;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+
+
+  &__section-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--keck-body-color);
+    margin-bottom: 1rem;
+    margin-top: 0;
+    position: relative;
+    display: inline-block;
+
+    // Kategorie-spezifische Linien
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 420px;
+      height: 4px;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 4rem;
+    }
+  }
+
+  &__section-subtitle {
+    font-size: 1.6rem;
+    color: var(--keck-gray);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+  }
+
+  &__item {
+    &--1 .category-contents__row {
+      // First item: Image left, content right
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+
+    &--2 .category-contents__row {
+      // Second item: Content left, image right
+      @media screen and (min-width: 768px) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    // Continue alternating pattern
+    &:nth-child(odd) .category-contents__row {
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+
+    &:nth-child(even) .category-contents__row {
+      @media screen and (min-width: 768px) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    @media screen and (min-width: 768px) {
+      gap: 4rem;
+    }
+  }
+
+  &__image {
+    flex: 0 0 66.666%; // ~8/12 columns
+    width: 100%;
+    order: -1; // Always on top on mobile
+
+    @media screen and (min-width: 768px) {
+      order: 0;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &__content {
+    flex: 0 0 33.333%; // ~4/12 columns
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    @media screen and (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  &__headline {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--keck-body-color);
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+
+    @media screen and (min-width: 768px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__text {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: var(--keck-body-color);
+    margin-bottom: 2rem;
+    opacity: 0.8;
+  }
+
+  &__button {
+    margin-top: auto;
+  }
+}
+
+// Category-specific lines for category contents title
+body[data-collection-handle="baumaschinen"] .category-contents__section-title::after {
+  background-color: var(--keck-secondary);
+}
+
+body[data-collection-handle="anhaenger"] .category-contents__section-title::after {
+  background-color: var(--keck-primary);
+}
+
+// ========================================
+// 7. BREADCRUMB STYLES
+// ========================================
+
+.breadcrumb {
+  padding: 1rem 0;
+  background: transparent;
+
+  &__container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding-inline: 15px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &:not(:first-child)::before {
+      content: '>';
+      margin: 0 1rem;
+      font-weight: bold;
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      line-height: 1;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 1.6rem;
+
+    &:hover {
+      color: var(--keck-secondary);
+    }
+  }
+
+  &__current {
+    font-weight: bold;
+  }
+}
+
+// Category-specific breadcrumb colors
+body[data-collection-handle="baumaschinen"] .breadcrumb {
+  &__link {
+    color: var(--keck-white);
+  }
+
+  &__current {
+    color: var(--keck-secondary);
+  }
+
+  &__item:not(:last-child)::after {
+    color: var(--keck-white);
+  }
+}
+
+body[data-collection-handle="anhaenger"] .breadcrumb {
+  &__link {
+    color: var(--keck-primary);
+  }
+
+  &__current {
+    color: var(--keck-primary);
+  }
+
+  &__item:not(:last-child)::after {
+    color: var(--keck-primary);
+  }
+}
+
+// ========================================
+// 8. NEWSLETTER STYLES
+// ========================================
+
+.keck-newsletter {
+  background-color: #f8f9fa;
+  padding: 5rem 0;
+  border-top: 1px solid #e5e7eb;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-inline: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: var(--keck-primary);
+    margin-bottom: .5rem;
+    margin-top: 0;
+  }
+
+  &__description {
+    font-size: 20px;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__form {
+    &-wrapper {
+      width: 66%;
+    }
+
+    display: flex;
+    gap: 1rem;
+    max-width: 400px;
+  }
+
+  &__input {
+    flex: 1;
+    padding: 1.2rem 1.5rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 1.4rem;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      outline: none;
+      border-color: var(--keck-primary);
+    }
+  }
+
+  &__button {
+    @extend .btn;
+    @extend .btn-primary;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+// ========================================
+// 9. SOCIAL STICKY STYLES
+// ========================================
+
+.keck-social-sticky {
+  position: fixed;
+  right: 0;
+  top: 20vh;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: var(--keck-social-bg);
+    color: var(--keck-social-icon);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    &:hover {
+      background-color: var(--keck-social-icon);
+      color: var(--keck-social-bg);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    svg {
+      width: 52px;
+      height: 52px;
+    }
+  }
+}
+
+// ========================================
+// 10. UNIFIED BUTTON STYLES & UTILITY CLASSES
+// ========================================
+
+// Base Button Placeholder (für kompakteres CSS)
+%btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1;
+  
+  &:focus {
+    outline: 2px solid var(--keck-secondary);
+    outline-offset: 2px;
+  }
+}
+
+// Base Button Class
+.btn {
+  @extend %btn;
+}
+
+// Primary Button (Dunkelblau, weiße Schrift)
+.btn-primary {
+  @extend %btn;
+  background-color: var(--keck-primary);
+  color: var(--keck-white);
+  border-color: var(--keck-primary);
+
+  &:hover {
+    background-color: var(--keck-secondary);
+    color: var(--keck-primary);
+    border-color: var(--keck-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(2, 40, 66, 0.3);
+  }
+}
+
+// Primary Light Button (Hellblau, weiße Schrift)
+.btn-primary-light {
+  @extend %btn;
+  background-color: var(--keck-primary-light);
+  color: var(--keck-white);
+  border-color: var(--keck-primary-light);
+
+  &:hover {
+    background-color: var(--keck-primary);
+    color: var(--keck-white);
+    border-color: var(--keck-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 97, 161, 0.3);
+  }
+}
+
+// Secondary Button (Gelber BG, dunkelblaue Schrift)
+.btn-secondary {
+  @extend %btn;
+  background-color: var(--keck-secondary);
+  color: var(--keck-primary);
+  border-color: var(--keck-secondary);
+
+  &:hover {
+    background-color: var(--keck-primary);
+    color: var(--keck-white);
+    border-color: var(--keck-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(247, 191, 6, 0.3);
+  }
+}
+
+// Link Button (Link-Optik mit Pfeil)
+.btn-link {
+  @extend %btn;
+  background-color: transparent;
+  color: var(--keck-primary);
+  border: none;
+  padding: 0.8rem 0;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: normal;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: var(--keck-secondary);
+    transform: none;
+    box-shadow: none;
+    
+    svg {
+      transform: translateX(5px);
+    }
+  }
+}
+
+// Large Button Modifier
+.btn-lg {
+  padding: 1.8rem 3.6rem;
+  font-size: 2rem;
+  
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+// Button Icon
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover .btn-icon,
+%btn:hover .btn-icon {
+  transform: translateX(3px);
+}
+
+// Hide default header and footer only on index page
+.template-index .header-wrapper,
+.template-index .section-footer {
+  display: none;
+}
+
+// Hide standard Shopify header/footer on collection pages
+.template-collection .header-wrapper,
+.template-collection .section-footer,
+.template-collection .shopify-section-group-header-group,
+.template-collection .shopify-section-group-footer-group {
+  display: none !important;
+}
+
+// Legacy Button Support (keeping for backwards compatibility)
+.btn-keck {
+  @extend %btn;
+  @extend .btn-primary;
+}
+
+// Text Colors
+.text-primary {
+  color: var(--keck-primary);
+}
+
+.text-secondary {
+  color: var(--keck-secondary);
+}
+
+// Container
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-inline: 15px;
+}
+
+// Smooth transitions for all interactive elements
+a, button, input, .btn {
+  transition: all 0.3s ease;
+}
+
+// Focus states for accessibility
+a:focus,
+button:focus,
+input:focus,
+[tabindex]:focus {
+  outline: 2px solid var(--keck-secondary);
+  outline-offset: 2px;
+}
+
+// ========================================
+// 11. RESPONSIVE MOBILE STYLES
+// ========================================
+
+@media screen and (max-width: 768px) {
+  // Header Mobile
+  .keck-header {
+    &-topbar__content,
+    &-main__content {
+      padding: 0 1rem;
+    }
+
+    &-main {
+      &__left {
+        gap: 1.5rem;
+      }
+
+      &__phone {
+        font-size: 1.2rem;
+
+        span {
+          display: none;
+        }
+      }
+
+      &__logo img {
+        max-height: 45px;
+      }
+    }
+
+    &-navigation {
+      display: none !important;
+    }
+  }
+
+  // Footer Mobile
+  .keck-footer {
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    &__column {
+      &.is-first {
+        order: 3;
+        padding-left: 0;
+      }
+
+      &.is-last {
+        order: 2;
+        padding-left: 0;
+      }
+
+      &.is-middle {
+        order: 1;
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+    }
+
+    &__nav-link {
+      font-size: 1.8rem;
+    }
+
+    &__legal {
+      text-align: center;
+
+      &-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  }
+
+  // Homepage Hero Mobile
+  .keck-homepage-hero {
+    min-height: 0vh;
+
+    &__grid {
+      grid-template-columns: 1fr;
+      min-height: 0vh;
+    }
+
+    &__card {
+      padding: 3rem 2rem;
+      min-height: 0vh;
+    }
+
+    &__title {
+      text-align: center !important;
+      margin-bottom: 2rem;
+      margin-top: 0;
+    }
+
+    &__image {
+      height: 250px;
+
+      &-container {
+        margin-bottom: 0;
+      }
+    }
+
+    &__description {
+      font-size: 1.4rem;
+      text-align: center !important;
+    }
+
+    &__button {
+      padding: 1rem 2rem;
+      font-size: 1.3rem;
+      bottom: 1.5rem;
+    }
+  }
+
+  .keck-header-main__logo svg {
+    max-height: 35px;
+    width: auto;
+  }
+
+  // Collection Pages Mobile
+  .collection-hero {
+    height: 60vh;
+
+    &__content {
+      padding: 3rem 2rem;
+      margin: 0 1rem;
+    }
+
+    &__headline {
+      font-size: 2.2rem;
+    }
+
+    &__topline {
+      font-size: 1.2rem;
+    }
+  }
+
+  .keck-collection-title {
+    padding: 2rem 0 1.5rem 0;
+
+    &__label {
+      font-size: 1.4rem;
+    }
+
+    &__name {
+      font-size: 2.4rem;
+    }
+  }
+
+  .collection-cross-sell {
+    &__content {
+      padding: 0 1rem;
+      justify-content: center;
+      text-align: center;
+    }
+
+    &__left {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &__icon {
+      width: 60px;
+      height: 60px;
+
+      svg {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    &__text {
+      font-size: 1.8rem;
+    }
+
+    &__arrow {
+      display: none;
+    }
+  }
+
+  // Breadcrumb Mobile
+  .breadcrumb {
+    &__container {
+      padding: 0 1rem;
+    }
+
+    &__list {
+      font-size: 0.8rem;
+    }
+
+    &__item:not(:first-child)::before {
+      margin: 0 0.5rem;
+    }
+  }
+
+  // Newsletter Mobile
+  .keck-newsletter {
+    &__container {
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &__form {
+      flex-direction: column;
+      max-width: 100%;
+    }
+  }
+
+  // Social Sticky Mobile
+  .keck-social-sticky {
+    right: 0;
+    gap: 0;
+
+    &__icon {
+      width: 45px;
+      height: 45px;
+
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  // Container Mobile
+  .container {
+    padding: 0 1rem;
+  }
+
+  // Category Entries Mobile
+  .category-entries {
+    padding: 3rem 0;
+
+    &__container {
+      padding-inline: 1rem;
+    }
+
+    &__item {
+      min-height: 400px;
+    }
+
+    &__link {
+      min-height: 400px;
+    }
+
+    &__image {
+      min-height: 400px;
+    }
+
+    &__title {
+      font-size: 32px;
+      
+      // Mobile: Alle Titel zentriert
+      .category-entries__item & {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+  }
+
+  // Question Teaser Mobile
+  .question-teaser {
+    padding: 0;
+    margin: 3rem 0;
+
+    &__content {
+      flex-direction: column;
+      text-align: center;
+      padding: 3rem 1.5rem;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__link {
+      padding: 1rem 1.5rem;
+      font-size: 1.4rem;
+    }
+  }
+
+  // Category Contents Mobile
+  .category-contents {
+    padding: 4rem 0;
+
+    &__header {
+      margin-bottom: 3rem;
+    }
+
+    &__section-title {
+      font-size: 2.4rem;
+    }
+
+    &__items {
+      gap: 4rem;
+    }
+
+    &__row {
+      gap: 2rem;
+    }
+
+    &__headline {
+      font-size: 2rem;
+    }
+
+    &__text {
+      font-size: 1.4rem;
+    }
+
+    &__link {
+      padding: 1rem 1.5rem;
+      font-size: 1.2rem;
+    }
+  }
+} 

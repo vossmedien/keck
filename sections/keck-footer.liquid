@@ -1,371 +1,13 @@
-<style>
-    /* KECK Footer Styles */
-
-    /* Newsletter Section */
-    .keck-newsletter {
-        background-color: #f8f9fa;
-        padding: 5rem 0;
-        border-top: 1px solid #e5e7eb;
-    }
-
-    .keck-newsletter__container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 4rem;
-    }
-
-
-    .keck-newsletter__title {
-        font-size: 2.4rem;
-        font-weight: bold;
-        color: var(--keck-primary);
-        margin-bottom: .5rem;
-        margin-top: 0;
-    }
-
-    .keck-newsletter__description {
-        font-size: 20px;
-        color: var(--keck-body-color);
-        margin-bottom: 0;
-        margin-top: 0;
-        font-weight: 700;
-        line-height: 1.2;
-    }
-
-    .keck-footer_social-media svg {
-        height: 36px;
-        width: auto;
-    }
-
-    .keck-newsletter__form-wrapper {
-        width: 66%;
-    }
-
-
-    .keck-newsletter__form {
-        display: flex;
-        gap: 1rem;
-        max-width: 400px;
-    }
-
-    .keck-newsletter__input {
-        flex: 1;
-        padding: 1.2rem 1.5rem;
-        border: 2px solid #e5e7eb;
-        border-radius: 6px;
-        font-size: 1.4rem;
-        transition: border-color 0.3s ease;
-    }
-
-    .keck-newsletter__input:focus {
-        outline: none;
-        border-color: var(--keck-primary);
-    }
-
-    .keck-newsletter__button {
-        background-color: var(--keck-primary);
-        color: white;
-        padding: 1.2rem 2rem;
-        border: none;
-        border-radius: 6px;
-        font-size: 1.4rem;
-        font-weight: bold;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .keck-newsletter__button:hover {
-        background-color: var(--keck-secondary);
-        color: var(--keck-primary);
-    }
-
-    .keck-newsletter__button svg {
-        width: 16px;
-        height: 16px;
-    }
-
-    /* Main Footer */
-    .keck-footer {
-        background-color: var(--keck-primary);
-        color: white;
-        padding: 4rem 0 2rem 0;
-    }
-
-    .keck-footer__container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    .keck-footer__grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        align-items: center;
-    }
-
-    .keck-footer__column.is-first {
-        padding-left: 5vw;
-
-        @media screen and (max-width: 768px) {
-            order: 3;
-            padding-left: 0;
-        }
-    }
-
-    .keck-footer__column.is-last {
-        padding-left: 5vw;
-
-        @media screen and (max-width: 768px) {
-            order: 2;
-            padding-left: 0;
-        }
-    }
-
-    .keck-footer__column.is-middle {
-        @media screen and (max-width: 768px) {
-            order: 1;
-        }
-    }
-
-    .keck-footer__column h3 {
-        color: var(--keck-white);
-        font-size: 28px;
-        padding-bottom: .5rem;
-        margin-bottom: 1rem;
-        border-bottom: 1px solid var(--keck-secondary);
-        margin-top: 0;
-        display: inline-block;
-    }
-
-    .keck-footer__nav-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .keck-footer__nav-item {
-        margin-bottom: 1rem;
-    }
-
-    .keck-footer__nav-link {
-        color: var(--keck-white);
-        font-size: 28px;
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid var(--keck-secondary);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .keck-footer__nav-item:last-child .keck-footer__nav-link {
-        border-bottom: 0;
-    }
-
-    .keck-footer__nav-link:hover {
-        color: var(--keck-secondary);
-    }
-
-    .keck-footer__logo {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
-    .keck-footer__logo img {
-        max-height: 80px;
-        width: auto;
-    }
-
-    .keck-footer__legal {
-        @media screen and (min-width: 768px) {
-            text-align: center;
-        }
-    }
-
-    .keck-footer__legal-links {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    .keck-footer__legal-link {
-        color: var(--keck-white);
-        text-decoration: none;
-        font-size: 1.4rem;
-        transition: color 0.3s ease;
-    }
-
-    .keck-footer__legal-link:hover {
-        color: var(--keck-secondary);
-    }
-
-    .keck-footer__contact-info {
-        color: var(--keck-white);
-        font-size: 1.4rem;
-        line-height: 1.6;
-    }
-
-    span.label {
-        color: var(--keck-secondary);
-        display: block;
-    }
-
-    .keck-footer__contact-item {
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        line-height: 1.2;
-        gap: 1rem;
-        padding-block: .5rem 1.75rem;
-        border-bottom: 1px solid rgba(255, 255, 255, .25);
-    }
-
-    .keck-footer__contact-item:last-child {
-        border-bottom: 0;
-    }
-
-    .keck-footer__contact-icon {
-        color: var(--keck-secondary);
-        width: 18px;
-        height: 18px;
-        flex-shrink: 0;
-    }
-
-    .keck-footer__contact-link {
-        color: var(--keck-white);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-
-    .keck-footer__contact-link:hover {
-        color: var(--keck-secondary);
-    }
-
-
-    /* Social Media Sticky */
-    .keck-social-sticky {
-        position: fixed;
-        right: 0;
-        top: 20vh;
-        z-index: 100;
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .keck-social-sticky__icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        height: 60px;
-        background-color: var(--keck-secondary);
-        color: var(--keck-primary);
-        text-decoration: none;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-
-    }
-
-    .keck-social-sticky__icon:hover {
-        background-color: var(--keck-primary);
-        color: var(--keck-primary);
-        transform: scale(1.1);
-    }
-
-    .keck-social-sticky__icon svg {
-
-    }
-
-    /* Mobile Styles */
-    @media screen and (max-width: 768px) {
-        .keck-newsletter__container {
-            flex-direction: column;
-
-            gap: 2rem;
-        }
-
-        .keck-newsletter__form {
-            flex-direction: column;
-            max-width: 100%;
-        }
-
-        .keck-footer__grid {
-            grid-template-columns: 1fr;
-            gap: 3rem;
-
-        }
-
-        .keck-footer__legal-links {
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-
-        .keck-social-sticky__icon {
-            width: 45px;
-            height: 45px;
-        }
-
-        .keck-social-sticky__icon svg {
-            width: 30px;
-            height: 30px;
-        }
-    }
-</style>
-
-<!-- Newsletter Section -->
-<div class="keck-newsletter">
-    <div class="keck-newsletter__container">
-        <div class="keck-newsletter__content">
-            <h2 class="keck-newsletter__title">{{ section.settings.newsletter_title | default: 'Newsletter abonnieren' }}</h2>
-            <p class="keck-newsletter__description">{{ section.settings.newsletter_description | default: 'Erhalten Sie regelmäßig Informationen zu unseren Angeboten' }}</p>
-        </div>
-
-        <div class="keck-newsletter__form-wrapper">
-            {%- form 'customer', id: 'KeckNewsletterForm', class: 'keck-newsletter__form' -%}
-                <input type="hidden" name="contact[tags]" value="newsletter">
-                <input
-                        type="email"
-                        name="contact[email]"
-                        class="keck-newsletter__input"
-                        placeholder="E-Mail Adresse eingeben"
-                        value="{{ form.email }}"
-                        aria-required="true"
-                        autocorrect="off"
-                        autocapitalize="off"
-                        autocomplete="email"
-                        required
-                >
-                <button type="submit" class="keck-newsletter__button">
-                    <span>Anmelden</span>
-                    <svg fill="currentColor" viewBox="0 0 20 20">
-                        <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-                    </svg>
-                </button>
-            {%- endform -%}
-        </div>
-    </div>
-</div>
-
 <!-- Main Footer -->
 <footer class="keck-footer">
     <div class="keck-footer__container">
         <div class="keck-footer__grid">
-
+            
             <!-- Navigation Column -->
             <div class="keck-footer__column is-first">
                 <ul class="keck-footer__nav-list">
                     <li class="keck-footer__nav-item">
-                        <a href="{{ pages['ueber-uns'].url | default: '/pages/ueber-uns' }}" class="keck-footer__nav-link">Über
-                            uns</a>
+                        <a href="{{ pages['ueber-uns'].url | default: '/pages/ueber-uns' }}" class="keck-footer__nav-link">Über uns</a>
                     </li>
                     <li class="keck-footer__nav-item">
                         <a href="{{ pages['ankauf'].url | default: '/pages/ankauf' }}" class="keck-footer__nav-link">Ankauf</a>
@@ -383,7 +25,6 @@
                                 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.1667 21.6667V30.3333H21.6667V45.5H30.3334V30.3333H36.8334L39 21.6667H30.3334V17.3333C30.3334 16.7587 30.5616 16.2076 30.968 15.8013C31.3743 15.3949 31.9254 15.1667 32.5 15.1667H39V6.5H32.5C29.6268 6.5 26.8713 7.64137 24.8397 9.67301C22.8081 11.7047 21.6667 14.4602 21.6667 17.3333V21.6667H15.1667Z" stroke="#F7BF06" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-
                             </a>
                         {%- endif -%}
                         {%- if section.settings.instagram_url != blank -%}
@@ -393,13 +34,12 @@
                                     <path d="M19.5 26C19.5 27.7239 20.1848 29.3772 21.4038 30.5962C22.6228 31.8152 24.2761 32.5 26 32.5C27.7239 32.5 29.3772 31.8152 30.5962 30.5962C31.8152 29.3772 32.5 27.7239 32.5 26C32.5 24.2761 31.8152 22.6228 30.5962 21.4038C29.3772 20.1848 27.7239 19.5 26 19.5C24.2761 19.5 22.6228 20.1848 21.4038 21.4038C20.1848 22.6228 19.5 24.2761 19.5 26Z" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M35.75 16.25V16.2717" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-
                             </a>
                         {%- endif -%}
                     </div>
                 </div>
             </div>
-
+            
             <!-- Logo & Legal Column -->
             <div class="keck-footer__column is-middle">
                 <div class="keck-footer__logo">
@@ -411,7 +51,7 @@
                         </svg>
                     </a>
                 </div>
-
+                
                 <div class="keck-footer__legal">
                     <div class="keck-footer__legal-links">
                         <a href="{{ pages['impressum'].url | default: '/pages/impressum' }}" class="keck-footer__legal-link">Impressum</a>
@@ -419,7 +59,7 @@
                     </div>
                 </div>
             </div>
-
+            
             <!-- Contact Column -->
             <div class="keck-footer__column is-last">
                 <h3>{{ section.settings.contact_title | default: 'Kontakt' }}</h3>
@@ -430,7 +70,6 @@
                         <path d="M22.5 10.5C23.2956 10.5 24.0587 10.8161 24.6213 11.3787C25.1839 11.9413 25.5 12.7044 25.5 13.5" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
                         <path d="M22.5 4.5C24.8869 4.5 27.1761 5.44821 28.864 7.13604C30.5518 8.82387 31.5 11.1131 31.5 13.5" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-
 
                     <a href="tel:+4907853464" class="keck-footer__contact-link">
                         <span class="label">Telefonnummer</span>
@@ -447,9 +86,10 @@
 
                     <a href="mailto:{{ section.settings.mobile_nr | default: 'tel:+497853464' }}" class="keck-footer__contact-link">
                         <span class="label">Mobil</span>
-                        {{ section.settings.mobile | default: '+49 (0) 7853 464e' }}
+                        {{ section.settings.mobile | default: '+49 (0) 7853 464' }}
                     </a>
                 </div>
+                
                 <div class="keck-footer__contact-item">
                     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.5 18C4.5 19.7728 4.84919 21.5283 5.52763 23.1662C6.20606 24.8041 7.20047 26.2923 8.45406 27.5459C9.70765 28.7995 11.1959 29.7939 12.8338 30.4724C14.4717 31.1508 16.2272 31.5 18 31.5C19.7728 31.5 21.5283 31.1508 23.1662 30.4724C24.8041 29.7939 26.2923 28.7995 27.5459 27.5459C28.7995 26.2923 29.7939 24.8041 30.4724 23.1662C31.1508 21.5283 31.5 19.7728 31.5 18C31.5 16.2272 31.1508 14.4717 30.4724 12.8338C29.7939 11.1959 28.7995 9.70765 27.5459 8.45406C26.2923 7.20047 24.8041 6.20607 23.1662 5.52763C21.5283 4.84919 19.7728 4.5 18 4.5C16.2272 4.5 14.4717 4.84919 12.8338 5.52763C11.1959 6.20607 9.70765 7.20047 8.45406 8.45406C7.20047 9.70765 6.20606 11.1959 5.52763 12.8338C4.84919 14.4717 4.5 16.2272 4.5 18Z" stroke="#F7BF06" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
@@ -471,11 +111,10 @@
                     </svg>
 
                     <a href="mailto:{{ section.settings.email | default: 'info@keck-baumaschinen.de' }}" class="keck-footer__contact-link">
-                        <span class="label">Mobil</span>
+                        <span class="label">E-Mail</span>
                         {{ section.settings.email | default: 'info@keck-baumaschinen.de' }}
                     </a>
                 </div>
-
 
                 <div class="keck-footer__contact-item">
                     <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -489,47 +128,11 @@
                         <div class="keck-footer__contact-info">{{ section.settings.address_line2 | default: '12345 Musterstadt' }}</div>
                     </div>
                 </div>
-
-
             </div>
-
+            
         </div>
-
     </div>
 </footer>
-
-<!-- Sticky Social Media Icons -->
-<div class="keck-social-sticky">
-    {%- if section.settings.facebook_url != blank -%}
-        <a href="{{ section.settings.facebook_url }}" class="keck-social-sticky__icon" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.1667 21.6667V30.3333H21.6667V45.5H30.3334V30.3333H36.8334L39 21.6667H30.3334V17.3333C30.3334 16.7587 30.5616 16.2076 30.968 15.8013C31.3743 15.3949 31.9254 15.1667 32.5 15.1667H39V6.5H32.5C29.6268 6.5 26.8713 7.64137 24.8397 9.67301C22.8081 11.7047 21.6667 14.4602 21.6667 17.3333V21.6667H15.1667Z" stroke="#0061A1" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-
-        </a>
-    {%- endif -%}
-
-    {%- if section.settings.instagram_url != blank -%}
-        <a href="{{ section.settings.instagram_url }}" class="keck-social-sticky__icon" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.66669 17.3333C8.66669 15.0348 9.57978 12.8304 11.2051 11.2051C12.8304 9.57976 15.0348 8.66667 17.3334 8.66667H34.6667C36.9652 8.66667 39.1696 9.57976 40.7949 11.2051C42.4203 12.8304 43.3334 15.0348 43.3334 17.3333V34.6667C43.3334 36.9652 42.4203 39.1696 40.7949 40.7949C39.1696 42.4202 36.9652 43.3333 34.6667 43.3333H17.3334C15.0348 43.3333 12.8304 42.4202 11.2051 40.7949C9.57978 39.1696 8.66669 36.9652 8.66669 34.6667V17.3333Z" stroke="#0061A1" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M19.5 26C19.5 27.7239 20.1848 29.3772 21.4038 30.5962C22.6228 31.8152 24.2761 32.5 26 32.5C27.7239 32.5 29.3772 31.8152 30.5962 30.5962C31.8152 29.3772 32.5 27.7239 32.5 26C32.5 24.2761 31.8152 22.6228 30.5962 21.4038C29.3772 20.1848 27.7239 19.5 26 19.5C24.2761 19.5 22.6228 20.1848 21.4038 21.4038C20.1848 22.6228 19.5 24.2761 19.5 26Z" stroke="#0061A1" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M35.75 16.25V16.2717" stroke="#0061A1" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-
-        </a>
-    {%- endif -%}
-
-    {%- if section.settings.plane_url != blank -%}
-        <a href="{{ section.settings.plane_url }}" class="keck-social-sticky__icon" target="_blank" rel="noopener" aria-label="Kontakt">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 21L31.5 4.5" stroke="#0061A1" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M31.5 4.5L21.75 31.5C21.6842 31.6436 21.5785 31.7653 21.4456 31.8506C21.3126 31.936 21.158 31.9813 21 31.9813C20.842 31.9813 20.6874 31.936 20.5544 31.8506C20.4215 31.7653 20.3158 31.6436 20.25 31.5L15 21L4.49998 15.75C4.35637 15.6842 4.23467 15.5785 4.14935 15.4456C4.06403 15.3126 4.01868 15.158 4.01868 15C4.01868 14.842 4.06403 14.6874 4.14935 14.5544C4.23467 14.4215 4.35637 14.3158 4.49998 14.25L31.5 4.5Z" stroke="#0061A1" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-
-        </a>
-    {%- endif -%}
-</div>
 
 {% schema %}
 {
@@ -537,22 +140,6 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    {
-      "type": "header",
-      "content": "Newsletter Settings"
-    },
-    {
-      "type": "text",
-      "id": "newsletter_title",
-      "label": "Newsletter Titel",
-      "default": "Newsletter abonnieren"
-    },
-    {
-      "type": "textarea",
-      "id": "newsletter_description",
-      "label": "Newsletter Beschreibung",
-      "default": "Erhalten Sie regelmäßig Informationen zu unseren Angeboten"
-    },
     {
       "type": "header",
       "content": "Footer Content"
@@ -578,6 +165,18 @@
       "id": "email",
       "label": "E-Mail Adresse",
       "default": "info@keck-baumaschinen.de"
+    },
+    {
+      "type": "text",
+      "id": "mobile",
+      "label": "Mobile Nummer",
+      "default": "+49 (0) 7853 464"
+    },
+    {
+      "type": "text",
+      "id": "mobile_nr",
+      "label": "Mobile Nummer Link",
+      "default": "tel:+497853464"
     },
     {
       "type": "text",

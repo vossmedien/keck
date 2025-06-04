@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "keck_homepage_hero": {
@@ -21,9 +12,19 @@
         "anhaenger_image": "shopify://shop_images/intro-anhaenger.jpg",
         "anhaenger_button_text": "Zu den Anhängern"
       }
+    },
+    "keck_newsletter": {
+      "type": "keck-newsletter",
+      "settings": {
+        "newsletter_title": "Keck Newsletter",
+        "newsletter_description": "Bleiben Sie auf dem Laufenden über neue Baumaschinen, Anhänger und Sonderangebote. Erhalten Sie regelmäßige Updates direkt in Ihr Postfach.",
+        "placeholder_text": "E-Mail Adresse eingeben",
+        "button_text": "Anmelden"
+      }
     }
   },
   "order": [
-    "keck_homepage_hero"
+    "keck_homepage_hero",
+    "keck_newsletter"
   ]
 }
